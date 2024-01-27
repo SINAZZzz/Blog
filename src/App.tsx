@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import Home from "./pages/home/Home";
+import Home from "./pages/home/Home.jsx";
 
 export default function App() {
   return (

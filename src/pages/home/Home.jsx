@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Box, Button } from "@mui/material";
 import Header from "../../components/header/Header.tsx";
 import { blogList } from "../../config/data.js";

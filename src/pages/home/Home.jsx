@@ -1,8 +1,10 @@
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import Header from "../../components/header/Header.tsx";
 import { blogList } from "../../config/data.js";
 import { useState } from "react";
-import SearchBar from "../../components/header/SearchBar.jsx";
+import SearchBar from "../../components/search/SearchBar.jsx";
+import Loading from "../../components/loading/Loading.jsx";
+import BlogList from "../../components/blogList/BlogList.jsx";
 
 const Home = () => {
   const [blogs, setBlogs] = useState(blogList);
@@ -29,6 +31,8 @@ const Home = () => {
     setSearchKey("");
   };
 
+  console.log(blogs);
+
   return (
     <Box component="div">
       <Header />
@@ -38,6 +42,7 @@ const Home = () => {
         formSubmit={handleSearchBar}
         handleSearchKey={(e) => setSearchKey(e.target.value)}
       />
+      {!blogs.length ? <Loading /> : <BlogList blogs={blogs} />}
     </Box>
   );
 };

@@ -1,18 +1,12 @@
-import Home from "./pages/home/Home.jsx";
-// import Blog from "./pages";
-//
-import { Box } from "@mui/material";
-//
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/home/Home";
+import Blog from "./pages/blog/Blog";
 
 export default function App() {
   return (
-    <Box component="div">
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/blog/:id" component={Blog} />
-        <Redirect to="/" />
-      </Switch>
-    </Box>
+    <Routes>
+      <Route index path="/" element={<Home />} />
+      <Route path="/blog/:id" element={<Blog />} />
+    </Routes>
   );
 }

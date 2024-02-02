@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import Header from "../../components/header/Header.tsx";
 import { blogList } from "../../config/data.js";
-import { useState } from "react";
+import { useState } from "react"; 
 import SearchBar from "../../components/search/SearchBar.jsx";
 import Loading from "../../components/loading/Loading.jsx";
 import BlogList from "../../components/blogList/BlogList.jsx";
@@ -23,7 +23,7 @@ const Home = () => {
       blog.category.toLowerCase().includes(searchKey.toLowerCase().trim())
     );
     setBlogs(filteredBlogs);
-  };
+  }; 
 
   // Clear search and show all blogs
   const handleClearSearch = () => {

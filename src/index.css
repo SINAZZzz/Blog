@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
 }
-body{
+body {
   margin: 2rem;
 }
 /* search bar */
@@ -42,7 +42,6 @@ body{
   border: none;
   width: 10vh;
   height: 5vh;
-  padding: 0.3rem 1rem;
   border-radius: 5px;
   background-color: #0f52ba;
   color: #fff;

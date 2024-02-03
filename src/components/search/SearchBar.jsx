@@ -22,7 +22,7 @@ export default function SearchBar({
             <ClearIcon />
           </span>
         )}
-        <Button variant="contained">Submit</Button>
+        <Box component="button">Submit</Box>
       </Box>
     </Box>
   );

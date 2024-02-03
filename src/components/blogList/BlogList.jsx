@@ -1,13 +1,14 @@
 import React from "react";
 import BlogItem from "./blogItem/BlogItem";
+import Box from "@mui/material/Box";
 
 const BlogList = ({ blogs }) => {
   return (
-    <div className="blogList-wrap">
+    <Box component="div" className="blogList-wrap">
       {blogs.map((blog) => (
         <BlogItem blog={blog} key={blog.id} />
       ))}
-    </div>
+    </Box>
   );
 };
 

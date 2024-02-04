@@ -1,0 +1,364 @@
+*
+    margin: 0
+    padding: 0
+
+body
+    margin: 2rem
+
+    /* search bar */
+.searchBar-wrap
+    background-color: #f0f0f0
+    width: fit-content
+    margin: 2.5rem auto 4rem auto
+    padding: 0.5rem
+    border-radius: 5px
+
+    & form
+        display: flex
+        align-items: center
+
+    & input
+        background-color: #f0f0f0
+        width: 40vh
+        height: 5vh
+        outline: none
+        border: none
+        font-size: larger
+
+    & span
+        padding-right: 0.5rem
+        padding-left: 0.5rem
+        color: black
+        font-weight: bolder
+        cursor: pointer
+
+    & button
+        font-weight: bolder
+        outline: none
+        border: none
+        width: 10vh
+        height: 5vh
+        border-radius: 5px
+        background-color: #0f52ba
+        color: #fff
+
+    /* chip */
+
+.chip
+    font-size: 0.8rem
+    background: linear-gradient(to right, #6190e8, #2d69d1)
+    color: #fff
+    padding: 0.3rem 0.5rem
+    border-radius: 5px
+    width: fit-content
+    text-transform: capitalize
+
+    /* blog */
+
+.blog-wrap
+    max-width: 700px
+    margin: 0 auto
+
+.blog-goBack
+    text-decoration: none
+    font-size: 0.8rem
+    color: #a9a9a9
+    font-weight: 500
+    margin-bottom: 2rem
+    display: block
+
+.blog-wrap header
+    text-align: center
+
+.blog-date
+    font-size: 0.8rem
+    color: #a9a9a9
+    font-weight: 500
+
+.blog-wrap img
+    width: 100%
+
+.blog-subCategory
+    display: flex
+    justify-content: center
+
+    & > div
+        margin: 1rem
+
+.blog-desc
+    padding: 1rem
+    margin-top: 1.5rem
+
+/* blog list */
+
+.blogList-wrap
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: 3rem
+
+@media (max-width: 768px)
+.blogList-wrap
+    grid-template-columns: repeat(2, 1fr)
+
+@media (max-width: 600px)
+.blogList-wrap
+    grid-template-columns: repeat(1, 1fr)
+
+/* blog item */
+.blogItem-wrap
+    display: flex
+    flex-direction: column
+
+.blogItem-cover
+    width: 100%
+    height: 250px
+    object-fit: cover
+    border-radius: 20px
+    margin-bottom: 0.5rem
+
+.blogItem-wrap h3
+    margin: 0.5rem 0 1rem 0
+    flex: 1
+
+.blogItem-desc
+    position: relative
+    max-height: 4rem
+    overflow: hidden
+    padding-right: 0.6rem
+    font-size: 0.8rem
+
+    &::before
+        position: absolute
+        content: "..."
+        bottom: 0
+        right: 0
+
+.blogItem-wrap footer
+    display: flex
+    align-items: center
+    margin-top: 1rem
+    justify-content: space-between
+
+.blogItem-link
+    text-decoration: none
+    color: inherit
+
+.blogItem-author
+    display: flex
+    align-items: center
+
+    & img
+        width: 40px
+        height: 40px
+        border-radius: 50%
+        object-fit: cover
+        margin-left: 0.5rem
+
+    & p
+        font-size: 0.6rem
+        color: #a9a9a9
+        font-weight: 600
+
+$square: 26px
+$offset: 30px
+$duration: 2.4s
+$delay: 0.2s
+$timing-function: ease-in-out
+$in-duration: 0.4s
+$in-delay: 0.1s
+$in-timing-function: ease-out
+
+.loading-child
+
+  --square: #{$square}
+  --offset: #{$offset}
+  --duration: #{$duration}
+  --delay: #{$delay}
+  --timing-function: #{$timing-function}
+  --in-duration: #{$in-duration}
+  --in-delay: #{$in-delay}
+  --in-timing-function: #{$in-timing-function}
+  width: calc(3 * var(--offset) + var(--square))
+  height: calc(2 * var(--offset) + var(--square))
+  padding: 0px
+  margin-left: auto
+  margin-right: auto
+  margin-top: 10px
+  margin-bottom: 30px
+  position: relative
+
+.loading-child div
+  display: inline-block
+  background: rgb(48, 48, 201)
+  border: none
+  border-radius: 2px
+  width: var(--square)
+  height: var(--square)
+  position: absolute
+  padding: 0px
+  margin: 0px
+  font-size: 6pt
+  color: black
+
+.loading-child #square1
+  left: calc(0 * var(--offset))
+  top: calc(0 * var(--offset))
+  animation: square1 var(--duration) var(--delay) var(--timing-function) infinite, squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both
+
+.loading-child #square2
+  left: calc(0 * var(--offset))
+  top: calc(1 * var(--offset))
+  animation: square2 var(--duration) var(--delay) var(--timing-function) infinite, squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both
+
+.loading-child #square3
+  left: calc(1 * var(--offset))
+  top: calc(1 * var(--offset))
+  animation: square3 var(--duration) var(--delay) var(--timing-function) infinite, squarefadein var(--in-duration) calc(2 * var(--in-delay)) var(--in-timing-function) both
+
+.loading-child #square4
+  left: calc(2 * var(--offset))
+  top: calc(1 * var(--offset))
+  animation: square4 var(--duration) var(--delay) var(--timing-function) infinite, squarefadein var(--in-duration) calc(3 * var(--in-delay)) var(--in-timing-function) both
+
+.loading-child #square5
+  left: calc(3 * var(--offset))
+  top: calc(1 * var(--offset))
+  animation: square5 var(--duration) var(--delay) var(--timing-function) infinite, squarefadein var(--in-duration) calc(4 * var(--in-delay)) var(--in-timing-function) both
+
+@keyframes square1
+  0%
+    left: calc(0 * var(--offset))
+    top: calc(0 * var(--offset))
+
+  8.333%
+    left: calc(0 * var(--offset))
+    top: calc(1 * var(--offset))
+
+  100%
+    left: calc(0 * var(--offset))
+    top: calc(1 * var(--offset))
+
+@keyframes square2
+  0%
+    left: calc(0 * var(--offset))
+    top: calc(1 * var(--offset))
+
+  8.333%
+    left: calc(0 * var(--offset))
+    top: calc(2 * var(--offset))
+
+  16.67%
+    left: calc(1 * var(--offset))
+    top: calc(2 * var(--offset))
+
+  25.00%
+    left: calc(1 * var(--offset))
+    top: calc(1 * var(--offset))
+
+  83.33%
+    left: calc(1 * var(--offset))
+    top: calc(1 * var(--offset))
+
+  91.67%
+    left: calc(1 * var(--offset))
+    top: calc(0 * var(--offset))
+
+  100%
+    left: calc(0 * var(--offset))
+    top: calc(0 * var(--offset))
+
+@keyframes square3
+  0%, 100%
+    left: calc(1 * var(--offset))
+    top: calc(1 * var(--offset))
+
+  16.67%
+    left: calc(1 * var(--offset))
+    top: calc(1 * var(--offset))
+
+  25.00%
+    left: calc(1 * var(--offset))
+    top: calc(0 * var(--offset))
+
+  33.33%
+    left: calc(2 * var(--offset))
+    top: calc(0 * var(--offset))
+
+  41.67%
+    left: calc(2 * var(--offset))
+    top: calc(1 * var(--offset))
+
+  66.67%
+    left: calc(2 * var(--offset))
+    top: calc(1 * var(--offset))
+
+  75.00%
+    left: calc(2 * var(--offset))
+    top: calc(2 * var(--offset))
+
+  83.33%
+    left: calc(1 * var(--offset))
+    top: calc(2 * var(--offset))
+
+  91.67%
+    left: calc(1 * var(--offset))
+    top: calc(1 * var(--offset))
+
+@keyframes square4
+  0%
+    left: calc(2 * var(--offset))
+    top: calc(1 * var(--offset))
+
+  33.33%
+    left: calc(2 * var(--offset))
+    top: calc(1 * var(--offset))
+
+  41.67%
+    left: calc(2 * var(--offset))
+    top: calc(2 * var(--offset))
+
+  50.00%
+    left: calc(3 * var(--offset))
+    top: calc(2 * var(--offset))
+
+  58.33%
+    left: calc(3 * var(--offset))
+    top: calc(1 * var(--offset))
+
+  100%
+    left: calc(3 * var(--offset))
+    top: calc(1 * var(--offset))
+
+@keyframes square5
+  0%
+    left: calc(3 * var(--offset))
+    top: calc(1 * var(--offset))
+
+  50.00%
+    left: calc(3 * var(--offset))
+    top: calc(1 * var(--offset))
+
+  58.33%
+    left: calc(3 * var(--offset))
+    top: calc(0 * var(--offset))
+
+  66.67%
+    left: calc(2 * var(--offset))
+    top: calc(0 * var(--offset))
+
+  75.00%
+    left: calc(2 * var(--offset))
+    top: calc(1 * var(--offset))
+
+  100%
+    left: calc(2 * var(--offset))
+    top: calc(1 * var(--offset))
+
+@keyframes squarefadein
+  0%
+    transform: scale(0.75)
+    opacity: 0
+
+  100%
+    transform: scale(1)
+    opacity: 1

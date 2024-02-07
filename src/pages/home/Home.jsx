@@ -18,7 +18,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 600,
+  width: "80%",
   boxShadow: 24,
   p: 4,
   color: "white",
@@ -92,7 +92,7 @@ const Home = () => {
           justifyContent="center"
           textAlign="center"
           borderRadius="20px"
-          bgcolor="darkgoldenrod"
+          bgcolor="darkgrey"
         >
           <Container maxWidth="sm">
             <Typography variant="h4" align="center" gutterBottom>

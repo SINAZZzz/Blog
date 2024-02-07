@@ -18,7 +18,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: "80%",
+  width: "50%",
   boxShadow: 24,
   p: 4,
   color: "white",
@@ -94,7 +94,7 @@ const Home = () => {
           borderRadius="20px"
           bgcolor="darkgrey"
         >
-          <Container maxWidth="sm">
+          {/* <Container maxWidth="sm"> */}
             <Typography variant="h4" align="center" gutterBottom>
               Sign Up
             </Typography>
@@ -148,7 +148,7 @@ const Home = () => {
                 Sign Up
               </Button>
             </form>
-          </Container>
+          {/* </Container> */}
         </Box>
       </Modal>
       <Header />

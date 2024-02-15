@@ -1,17 +1,25 @@
+import { useState } from "react";
+// mui
 import {
   Box,
   Button,
   Modal,
   Typography,
-  Container,
   TextField,
+  IconButton,
 } from "@mui/material";
-import Header from "../../components/header/Header.tsx";
+// config
 import { blogList } from "../../config/data.js";
-import { useState } from "react";
+// component
+import Header from "../../components/header/Header.tsx";
 import SearchBar from "../../components/search/SearchBar.jsx";
 import Loading from "../../components/loading/Loading.jsx";
 import BlogList from "../../components/blogList/BlogList.jsx";
+//
+import { ThemeProvider, createTheme } from "@mui/material";
+import { CssBaseline } from "@mui/material";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
 
 const style = {
   position: "absolute",
@@ -25,6 +33,7 @@ const style = {
 };
 
 const Home = () => {
+  const [darkMode, setDarkMode] = useState(false);
   const [blogs, setBlogs] = useState(blogList);
   const [searchKey, setSearchKey] = useState("");
   const [open, setOpen] = useState(false);
@@ -35,6 +44,12 @@ const Home = () => {
     lastName: "",
     email: "",
     password: "",
+  });
+
+  const theme = createTheme({
+    palette: {
+      mode: darkMode ? "dark" : "light",
+    },
   });
 
   // Search submit
@@ -72,29 +87,34 @@ const Home = () => {
   };
 
   return (
-    <Box component="div">
-      <div>
-        <Button onClick={handleOpen} variant="outlined">
-          Sign Up
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Box component="div">
+        <div>
+          <Button onClick={handleOpen} variant="outlined">
+            Sign Up
+          </Button>
+        </div>
+        <Button variant="contained" onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? "Light Mode" : "Dark Mode"}
         </Button>
-      </div>
-      {/* modal */}
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box
-          sx={style}
-          display="flex"
-          flexDirection="column"
-          justifyContent="center"
-          textAlign="center"
-          borderRadius="20px"
-          bgcolor="darkgrey"
+        {/* modal */}
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
         >
-          {/* <Container maxWidth="sm"> */}
+          <Box
+            sx={style}
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            textAlign="center"
+            borderRadius="20px"
+            bgcolor="darkgrey"
+          >
+            {/* <Container maxWidth="sm"> */}
             <Typography variant="h4" align="center" gutterBottom>
               Sign Up
             </Typography>
@@ -121,7 +141,7 @@ const Home = () => {
                 fullWidth
                 margin="normal"
                 label="Email"
-                type="email"
+                type="hidden"
                 name="email"
                 variant="filled"
                 value={formData.email}
@@ -137,6 +157,7 @@ const Home = () => {
                 value={formData.password}
                 onChange={handleChange}
               />
+              <Typography sx={{ cursor: "pointer" }}>Login</Typography>
               <Button
                 type="submit"
                 variant="contained"
@@ -148,18 +169,19 @@ const Home = () => {
                 Sign Up
               </Button>
             </form>
-          {/* </Container> */}
-        </Box>
-      </Modal>
-      <Header />
-      <SearchBar
-        value={searchKey}
-        clearSearch={handleClearSearch}
-        formSubmit={handleSearchBar}
-        handleSearchKey={(e) => setSearchKey(e.target.value)}
-      />
-      {!blogs.length ? <Loading /> : <BlogList blogs={blogs} />}
-    </Box>
+            {/* </Container> */}
+          </Box>
+        </Modal>
+        <Header />
+        <SearchBar
+          value={searchKey}
+          clearSearch={handleClearSearch}
+          formSubmit={handleSearchBar}
+          handleSearchKey={(e) => setSearchKey(e.target.value)}
+        />
+        {!blogs.length ? <Loading /> : <BlogList blogs={blogs} />}
+      </Box>
+    </ThemeProvider>
   );
 };
 

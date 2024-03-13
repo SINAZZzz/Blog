@@ -90,14 +90,16 @@ const Home = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box component="div">
-        <div>
+        {/* <div>
           <Button onClick={handleOpen} variant="outlined">
             Sign Up
           </Button>
-        </div>
-        <Button variant="contained" onClick={() => setDarkMode(!darkMode)}>
+        </div> */}
+        {/* dark mode btn */}
+        {/* <Button variant="contained" onClick={() => setDarkMode(!darkMode)}>
           {darkMode ? "Light Mode" : "Dark Mode"}
-        </Button>
+        </Button> */}
+
         {/* modal */}
         <Modal
           open={open}

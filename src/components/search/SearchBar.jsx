@@ -1,5 +1,6 @@
 import { Box, Button } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
+import "./style.css";
 
 export default function SearchBar({
   formSubmit,

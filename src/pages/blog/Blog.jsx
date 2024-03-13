@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { blogList } from "../../config/data";
 import { Link } from "react-router-dom";
 import Loading from "../../components/loading/Loading";
+import "./style.css";
 
 const Blog = () => {
   const { id } = useParams();
@@ -10,7 +11,7 @@ const Blog = () => {
 
   useEffect(() => {
     let blog = blogList.find((blog) => blog.id === parseInt(id));
-    if (blog) { 
+    if (blog) {
       setBlog(blog);
     }
   }, []);

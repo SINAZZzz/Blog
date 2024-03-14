@@ -1,39 +1,71 @@
-export const blogList = [
-  {
-    id: 1,
-    title: "css version 3",
-    category: "Development",
-    subCategory: ["frontend", "ui/ux", "design"],
-    description:
-      "CSS version 3 for React components and pages that use React components to render pages and pages that use React components to render pages and pages that use React components to render pages.",
-    authorName: "ali zara",
-    authorAvatar: "https://s8.uupload.ir/files/user_5hab.jpg",
-    createdAt: "June 03, 2021",
-    cover: "https://s8.uupload.ir/files/designer-1_4s8p.jpg",
-  },
-  {
-    id: 2,
-    title: "css version 3",
-    category: "a",
-    subCategory: ["frontend", "ui/ux", "design"],
-    description:
-      "CSS version 3 for React components and pages that use React components to render pages and pages that use React components to render pages and pages that use React components to render pages.",
-    authorName: "ali zara",
-    authorAvatar: "https://s8.uupload.ir/files/user_5hab.jpg",
-    createdAt: "June 03, 2021",
-    cover:
-      "https://s8.uupload.ir/files/f67396fc3cfce63a28e07ebb35d974ac_qvzt.jpg",
-  },
-  {
-    id: 3,
-    title: "css version 3",
-    category: "Development",
-    subCategory: ["frontend", "ui/ux", "design"],
-    description:
-      "CSS version 3 for React components and pages that use React components to render pages and pages that use React components to render pages and pages that use React components to render pages.",
-    authorName: "ali zara",
-    authorAvatar: "https://s8.uupload.ir/files/user_5hab.jpg",
-    createdAt: "June 03, 2021",
-    cover: "https://s8.uupload.ir/files/make-it-personal_bafz.jpg",
-  },
-];
+import { faker } from "@faker-js/faker";
+
+const items = 10;
+
+// export const blogList = [
+//   {
+//     id: faker.number.int(),
+//     title: faker.company.name(),
+//     category: faker.commerce.product(),
+//     subCategory: [
+//       faker.lorem.word(),
+//       faker.lorem.word(),
+//       faker.lorem.word(),
+//       faker.lorem.word(),
+//     ],
+//     description: faker.lorem.paragraph(),
+//     authorName: faker.person.fullName(),
+//     authorAvatar: faker.image.avatar(),
+//     createdAt: faker.date.weekday() + " " + faker.date.month(),
+//     cover: faker.image.url(),
+//   },
+//   {
+//     id: faker.number.int(),
+//     title: faker.company.name(),
+//     category: faker.commerce.product(),
+//     subCategory: [
+//       faker.lorem.word(),
+//       faker.lorem.word(),
+//       faker.lorem.word(),
+//       faker.lorem.word(),
+//     ],
+//     description: faker.lorem.paragraph(),
+//     authorName: faker.person.fullName(),
+//     authorAvatar: faker.image.avatar(),
+//     createdAt: faker.date.weekday() + " " + faker.date.month(),
+//     cover: faker.image.url(),
+//   },
+//   {
+//     id: faker.number.int(),
+//     title: faker.company.name(),
+//     category: faker.commerce.product(),
+//     subCategory: [
+//       faker.lorem.word(),
+//       faker.lorem.word(),
+//       faker.lorem.word(),
+//       faker.lorem.word(),
+//     ],
+//     description: faker.lorem.paragraph(),
+//     authorName: faker.person.fullName(),
+//     authorAvatar: faker.image.avatar(),
+//     createdAt: faker.date.weekday() + " " + faker.date.month(),
+//     cover: faker.image.url(),
+//   },
+// ];
+
+export const blogList = Array.from({ length: items }, () => ({
+  id: faker.number.int(),
+  title: faker.company.name(),
+  category: faker.commerce.product(),
+  subCategory: [
+    faker.lorem.word(),
+    faker.lorem.word(),
+    faker.lorem.word(),
+    faker.lorem.word(),
+  ],
+  description: faker.lorem.paragraph(),
+  authorName: faker.person.fullName(),
+  authorAvatar: faker.image.avatar(),
+  createdAt: faker.date.weekday() + " " + faker.date.month(),
+  cover: faker.image.url(),
+}));

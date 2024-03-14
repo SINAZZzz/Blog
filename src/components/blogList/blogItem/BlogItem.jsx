@@ -17,7 +17,14 @@ const BlogItem = ({
 }) => {
   return (
     <Box component="div" className="blogItem-wrap">
-      <Box component="img" className="blogItem-cover" src={cover} alt="cover" />
+      <Link className="blogItem-link" to={`/blog/${id}`}>
+        <Box
+          component="img"
+          className="blogItem-cover"
+          src={cover}
+          alt="cover"
+        />
+      </Link>
       <Box component="p" className="chip">
         {category}
       </Box>

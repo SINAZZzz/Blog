@@ -37,7 +37,9 @@ const BlogItem = ({
       </Box>
       <Box component="footer">
         <Box component="div" className="blogItem-author">
-          <Box component="img" src={authorAvatar} alt="avatar" />
+          <Link to={`/profile/${id}`}>
+            <Box component="img" src={authorAvatar} alt="avatar" />
+          </Link>
         </Box>
         <Box component="div" className="blogItem-author">
           <Box component="h6">{authorName}</Box>

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 import "./style.css";
+import { AppContext } from "../../../context/AppContext";
 
 const BlogItem = ({
   blog: {
@@ -15,6 +16,8 @@ const BlogItem = ({
     id,
   },
 }) => {
+  const { setId } = useContext(AppContext);
+
   return (
     <Box component="div" className="blogItem-wrap">
       <Link className="blogItem-link" to={`/blog/${id}`}>
@@ -37,7 +40,7 @@ const BlogItem = ({
       </Box>
       <Box component="footer">
         <Box component="div" className="blogItem-author">
-          <Link to={`/profile/${id}`}>
+          <Link to={`/profile/${id}`} onClick={() => setId(id)}>
             <Box component="img" src={authorAvatar} alt="avatar" />
           </Link>
         </Box>

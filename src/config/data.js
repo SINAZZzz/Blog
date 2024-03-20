@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 
-const items = 1;
+const items = 5;
 
 export const blogList = Array.from({ length: items }, () => ({
   id: faker.number.int(),
